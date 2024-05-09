@@ -8,30 +8,307 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 7.5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(120, 120, 120);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgb(80, 80, 80);
+        }
+
+        .nav-pills .nav-item .nav-link:not(.active) {
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+        }
+
+        .nav-pills .nav-item .nav-link {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+        }
+        footer > ul > li {
+            list-style-type: none;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark-subtle" id="navs">
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-secondary" id="navs">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand"><i class="bi bi-server me-2"></i>My Page</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
-                <span class="navbar-toggler-icon"></span>
+            <button id="button" class="navbar-toggler border-0 outline-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navCollapse">
+                <i class="bi bi-grid-3x3-gap fs-2" id="icon"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navCollapse">
+            <a href="#" class="navbar-brand fw-bold fs-4 mx-3"><i class="bi bi-person-circle me-2"></i>My Page</a>
+            <div class="collapse navbar-collapse ms-3" id="navCollapse">
                 <hr class="border border-black">
-                <div class="navbar-nav">
-                    <a href="#" class="nav-link">Section 1</a>
-                    <a href="#" class="nav-link">Section 2</a>
-                    <a href="#" class="nav-link">Section 3</a>
-                    <a href="#" class="nav-link">Section 4</a>
-                </div>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link border border-black me-2">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#collapse" class="nav-link me-2">Collapse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#navbar" class="nav-link me-2">Navbar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#scrollspy" class="nav-link me-2">Scrollspy</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
-    <div class="" data-bs-spy="scroll" data-bs-target="navs"></div>
+    <div data-bs-spy="scroll" data-bs-target="#navs" data-bs-smooth-scroll="true"
+        class="scrollspy-example-2 d-flex flex-column gap-5 px-5" tabindex="0">
+        <section class="section" id="home">
+            <h1>What is Bootstrap?</h1>
+            <p>Bootstrap is an HTML, CSS and JS library that focuses on simplifying the development of informative web
+                pages (as opposed to web applications). The primary purpose of adding it to a web project is to apply
+                Bootstrap's choices of color, size, font and layout to that project. As such, the primary factor is
+                whether the developers in charge find those choices to their liking. Once added to a project, Bootstrap
+                provides basic style definitions for all HTML elements. The result is a uniform appearance for prose,
+                tables and form elements across web browsers. In addition, developers can take advantage of CSS classes
+                defined in Bootstrap to further customize the appearance of their contents. For example, Bootstrap has
+                provisioned for light- and dark-colored tables, page headings, more prominent pull quotes, and text with
+                a highlight.</p>
+            <p>Bootstrap also comes with several JavaScript components which do not require other libraries like jQuery.
+                They provide additional user interface elements such as dialog boxes, tooltips, progress bars,
+                navigation drop-downs, and carousels. Each Bootstrap component consists of an HTML structure, CSS
+                declarations, and in some cases accompanying JavaScript code. They also extend the functionality of some
+                existing interface elements, including for example an auto-complete function for input fields.
+            </p>
+            <p>The most prominent components of Bootstrap are its layout components, as they affect an entire web page.
+                The basic layout component is called "Container", as every other element in the page is placed in it.
+                Developers can choose between a fixed-width container and a fluid-width container. While the latter
+                always fills the width with the web page, the former uses one of the five predefined fixed widths,
+                depending on the size of the screen showing the page:<br><br>
+
+                Smaller than 576 pixels<br>
+                576-768 pixels<br>
+                768-992 pixels<br>
+                992-1200 pixels<br>
+                Larger than 1200 pixels<br><br>
+                Once a container is in place, other Bootstrap layout components implement a CSS Flexbox layout through
+                defining rows and columns.
+
+                A precompiled version of Bootstrap is available in the form of one CSS file and three JavaScript files
+                that can be readily added to any project. The raw form of Bootstrap, however, enables developers to
+                implement further customization and size optimizations. This raw form is modular, meaning that the
+                developer can remove unneeded components, apply a theme and modify the uncompiled Sass files.</p>
+        </section>
+        <section class="section" id="collapse">
+            <h1>Collapse</h1>
+            <h5>Toggle the visibility of content across your project with a few classes and our JavaScript plugins.</h5>
+            <br><br>
+            <h2>How it works</h2>
+            <p>The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers
+                that are mapped to specific elements you toggle. Collapsing an element will animate the <span
+                    class="text-info">height</span> from its
+                current value to <span class="text-info">0</span>. Given how CSS handles animations, you cannot use
+                <span class="text-info">padding</span> on a <span class="text-info">.collapse</span> element.
+                Instead, use the class as an independent wrapping element.
+            </p><br><br>
+            <h2>Example</h2>
+            <p>Click the buttons below to show and hide another element via class changes:<br><br>
+
+                <span class="text-info">.collapse</span> hides content<br>
+                <span class="text-info">.collapsing</span> is applied during transitions<br>
+                <span class="text-info">.collapse.show</span> shows content<br><br>
+                Generally, we recommend using a <span class="text-info">button element</span> with the <span
+                    class="text-info">data-bs-target</span> attribute. While not recommended from a
+                semantic point of view, you can also use an <span class="text-info">a</span> link with the <span
+                    class="text-info">href</span> attribute (and a <span class="text-info">role="button"</span>).
+                In both cases, the <span class="text-info">data-bs-toggle="collapse"</span> is required.
+            </p><br><br>
+            <h2>Accessibility</h2>
+            <p>Be sure to add <span class="text-info">aria-expanded</span> to the control element. This attribute
+                explicitly conveys the current state
+                of the collapsible element tied to the control to screen readers and similar assistive technologies. If
+                the collapsible element is closed by default, the attribute on the control element should have a value
+                of <span class="text-info">aria-expanded="false"</span>. If you've set the collapsible element to be
+                open by default using the <span class="text-info">show</span>
+                class, set <span class="text-info">aria-expanded="true"</span> on the control instead. The plugin will
+                automatically toggle this
+                attribute on the control based on whether or not the collapsible element has been opened or closed (via
+                JavaScript, or because the user triggered another control element also tied to the same collapsible
+                element). If the control element's HTML element is not a button (e.g., an <span
+                    class="text-info">a</span> or <span class="text-info">div</span>), the attribute
+                <span class="text-info">role="button"</span> should be added to the element.
+
+                If your control element is targeting a single collapsible element - i.e. the <span
+                    class="text-info">data-bs-target</span>
+                attribute is pointing to an <span class="text-info">id</span> selector - you should add the <span
+                    class="text-info">aria-controls</span> attribute to the
+                control element, containing the <span class="text-info">id</span> of the collapsible element. Modern
+                screen readers and similar
+                assistive technologies make use of this attribute to provide users with additional shortcuts to
+                navigate directly to the collapsible element itself.
+
+                Note that Bootstrap's current implementation does not cover the various optional keyboard
+                interactions described in the <span class="text-primary border-bottom border-primary">ARIA Authoring
+                    Practices Guide accordion pattern</span> - you will need
+                to include these yourself with custom JavaScript.
+            </p>
+        </section>
+        <section class="section" id="navbar">
+            <h1>Navbar</h1>
+            <h5>Documentation and examples for Bootstrap's powerful, responsive navigation header, the navbar. Includes
+                support for branding, navigation, and more, including support for our collapse plugin.</h5>
+            <br><br>
+            <h2>How it works</h2>
+            <p>Here's what you need to know before getting started with the navbar:
+            <ul>
+                <li>Navbars require a wrapping <span class="text-info">.navbar</span> with <span
+                        class="text-info">.navbar-expand{-sm|-md|-lg|-xl|-xxl}</span> for responsive
+                    collapsing
+                    and <span class="text-primary border-bottom border-primary">color scheme</span> classes.</li>
+                <li>Navbars and their contents are fluid by default. Change the <span
+                        class="text-primary border-bottom border-primary">container</span> to limit their horizontal
+                    width in
+                    different ways.</li>
+                <li>Use our <span class="text-primary border-bottom border-primary">spacing</span> and <span
+                        class="text-primary border-bottom border-primary">flex</span> utility classes for controlling
+                    spacing and alignment within navbars.</li>
+                <li>Navbars are responsive by default, but you can easily modify them to change that. Responsive
+                    behavior
+                    depends on our Collapse JavaScript plugin.</li>
+                <li>Ensure accessibility by using a <span class="text-info">nav</span> element or, if using a more
+                    generic element such as a <span class="text-info">div</span>, add a
+                    <span class="text-info">role="navigation"</span> to every navbar to explicitly identify it as a
+                    landmark region for users of
+                    assistive
+                    technologies.
+                </li>
+                <li>Indicate the current item by using <span class="text-info">aria-current="page"</span> for the
+                    current page or <span class="text-info">aria-current="true"</span>
+                    for the current item in a set.</li>
+                <li><span class="fw-bold">New in v5.2.0:</span> Navbars can be themed with CSS variables that are scoped
+                    to the <span class="text-info">.navbar</span> base class.
+                    <span class="text-info">.navbar-light</span> has been deprecated and <span
+                        class="text-info">.navbar-dark</span> has been rewritten to override CSS variables
+                    instead of adding additional styles.
+                </li>
+            </ul>
+            </p><br><br>
+            <h2>Supported content</h2>
+            <p>Navbars come with built-in support for a handful of sub-components. Choose from the following as needed:
+            <ul>
+                <li><span class="text-info">.navbar-brand</span> for your company, product, or project name.</li>
+                <li><span class="text-info">.navbar-nav</span> for a full-height and lightweight navigation (including
+                    support for dropdowns).</li>
+                <li><span class="text-info">.navbar-toggler</span> for use with our collapse plugin and other <span
+                        class="text-primary border-bottom border-primary">navigation toggling</span> behaviors.</li>
+                <li>Flex and spacing utilities for any form controls and actions.</li>
+                <li><span class="text-info">.navbar-text</span> for adding vertically centered strings of text.</li>
+                <li><span class="text-info">.collapse.navbar-collapse</span> for grouping and hiding navbar contents by
+                    a parent breakpoint.</li>
+                <li>Add an optional <span class="text-info">.navbar-scroll</span> to set a <span
+                        class="text-info">max-height</span> and <span
+                        class="text-primary border-bottom border-primary">scroll expanded navbar content</span>.</li>
+            </ul>
+            Here's an example of all the sub-components included in a responsive light-themed navbar that automatically
+            collapses at the <span class="text-info">lg</span> (large) breakpoint.
+            </p>
+
+        </section>
+        <section class="section" id="scrollspy">
+            <h1>Scrollspy</h1>
+            <h5>Automatically update Bootstrap navigation or list group components based on scroll position to indicate
+                which link is currently active in the viewport.</h5><br><br>
+            <h2>How it works</h2>
+            <p>Scrollspy toggles the <span class="text-info">.active</span> class on anchor (<span
+                    class="text-info">&lta&gt</span>) elements when the element with the <span
+                    class="text-info">id</span> referenced by
+                the anchor's <span class="text-info">href</span> is scrolled into view. Scrollspy is best used in
+                conjunction with a Bootstrap <span class="text-primary border-bottom border-primary">nav
+                    component</span> or <span class="text-primary border-bottom border-primary">list group</span>, but
+                it will also work with any anchor
+                elements in the current page. Here's
+                how it works.
+            <ul>
+                <li>To start, scrollspy requires two things: a navigation, list group, or a simple set of links,
+                    plus a scrollable container. The scrollable container can be the
+
+                    <span class="text-info">&ltbody&gt</span> or a custom element with a set <span
+                        class="text-info">height</span> and <span class="text-info">overflow-y: scroll</span>.
+                </li>
+                <li>On the scrollable container, add <span class="text-info">data-bs-spy="scroll"</span> and <span
+                        class="text-info">data-bs-target="#navId"</span> where
+                    <span class="text-info">navId</span> is the unique <span class="text-info">id</span> of the
+                    associated navigation. If there is no focusable element inside
+                    the element, be sure to also include a <span class="text-info">tabindex="0"</span> to ensure
+                    keyboard access.
+                </li>
+                <li>As you scroll the “spied” container, an <span class="text-info">.active</span> class is added and
+                    removed from anchor links
+                    within the associated navigation. Links must have resolvable <span class="text-info">id</span>
+                    targets, otherwise they're
+                    ignored. For example, a <span class="text-info">&lta href="#home"&gthome&lt/a&gt</span> must
+                    correspond to something in the DOM
+                    like <span class="text-info">&ltdiv id="home"&gt&lt/div&gt</span>.</li>
+                <li>Target elements that are not visible will be ignored. See the <span
+                        class="text-primary border-bottom border-primary">Non-visible elements</span> section
+                    below.</li>
+            </ul>
+            </p><br><br>
+            <h2>Options</h2>
+            <p>As options can be passed via data attributes or JavaScript, you can append an option name to <span
+                    class="text-info">data-bs-</span>, as
+                in <span class="text-info">data-bs-animation="{value}"</span>. Make sure to change the case type of the
+                option name from <i>“camelCase”</i> to
+                <i>“kebab-case”</i> when passing the options via data attributes. For example, use
+                <span class="text-info">data-bs-custom-class="beautifier"</span> instead of <span
+                    class="text-info">data-bs-customClass="beautifier"</span>. <br><br>
+
+                As of Bootstrap 5.2.0, all components support an <span class="fw-bold">experimental</span> reserved data
+                attribute <span class="text-info">data-bs-config</span>
+                that can house simple component configuration as a JSON string. When an element has
+                <span class="text-info">data-bs-config='{"delay":0, "title":123}'</span> and <span
+                    class="text-info">data-bs-title="456"</span> attributes, the final <span
+                    class="text-info">title</span> value will
+                be <span class="text-info">456</span> and the separate data attributes will override values given on
+                <span class="text-info">data-bs-config</span>. In addition,
+                existing data attributes are able to house JSON values like <span
+                    class="text-info">data-bs-delay='{"show":0,"hide":150}'</span>.<br><br>
+
+                The final configuration object is the merged result of <span class="text-info">data-bs-config</span>,
+                <span class="text-info">data-bs-</span>, and <span class="text-info">js object</span> where the
+                latest given key-value overrides the others.
+            </p>
+        </section>
+    </div>
+    <hr>
+    <footer class="my-5">
+        <h2 class="text-center mb-5">References:</h2>
+        <ul>
+            <li class="text-center my-2"><a target="_blank" href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)</a></li>
+            <li class="text-center my-2"><a target="_blank" href="https://getbootstrap.com/docs/5.3/components/collapse/">https://getbootstrap.com/docs/5.3/components/collapse/</a></li>
+            <li class="text-center my-2"><a target="_blank" href="https://getbootstrap.com/docs/5.3/components/navbar/">https://getbootstrap.com/docs/5.3/components/navbar/</a></li>
+            <li class="text-center my-2"><a target="_blank" href="https://getbootstrap.com/docs/5.3/components/scrollspy/">https://getbootstrap.com/docs/5.3/components/scrollspy/</a></li>
+        </ul>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script>
+        var button = document.getElementById('button')
+        var icon = document.getElementById('icon')
+        button.addEventListener('click', () => {
+            if (icon.className === "bi bi-grid-3x3-gap fs-2") {
+                icon.className = "bi bi-grid-3x3-gap-fill fs-2"
+            }
+            else if (icon.className === "bi bi-grid-3x3-gap-fill fs-2") {
+                icon.className = "bi bi-grid-3x3-gap fs-2"
+            }
+        })
+    </script>
 </body>
 
 </html>
